@@ -2444,7 +2444,7 @@ body{
         height: 100vh;
         position: absolute;
         bottom: 0;
-        transform: translateY(-1530px);
+        transform: translateY(-1620px);
         background: url('../mail_footer.png') no-repeat 50% center;
         background-size: 50%;
     }
