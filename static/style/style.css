@@ -2415,7 +2415,7 @@ body{
         background-image: url('../path.png');
         background-repeat: no-repeat;
         background-size: 1000px;
-        background-position: 20px 0%;
+        background-position: 20px -200px;
         z-index: 996;
     }
     
@@ -2424,13 +2424,13 @@ body{
         height: 1920px;
         background-image: url('../image.png');
         background-repeat: no-repeat;
-        background-position: 90% 600px;
+        background-position: 90% 400px;
         background-size: 90vw;
     }
     
     .content-text{
         position: absolute;
-        margin-top: 1000px;
+        margin-top: 800px;
         margin-left: 8%;
         font-size: 25px;
         font-weight: 500;
@@ -2450,7 +2450,7 @@ body{
         height: 100vh;
         position: absolute;
         bottom: 0;
-        transform: translateY(-1570px);
+        transform: translateY(-200px);
         background: url('../mail_footer.png') no-repeat 50% center;
         background-size: 50%;
     }
