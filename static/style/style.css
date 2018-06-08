@@ -2488,13 +2488,13 @@ body{
 @media only screen and (max-width: 400px){
 
     .wrapper{
-        max-height: 1700px;
+        max-height: 1600px;
         overflow: hidden;
     }
     
     .intro{
         width: 100%;
-        height: 100vh;
+        height: 820px;
     }
     
     .union_1{
@@ -2651,12 +2651,12 @@ body{
     .content{
         position: relative;
         width: 100%;
-        height: 3353px;
+        height: 1700px;
         background-image: url('../grey_bg.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        margin-top:-550px;
+        margin-top:-460px;
     }
     
     .content-image-bg{
@@ -2666,7 +2666,7 @@ body{
         background-image: url('../path.png');
         background-repeat: no-repeat;
         background-size: 1000px;
-        background-position: 20px 5%;
+        background-position: 20px -150px;
         z-index: 996;
     }
     
@@ -2675,13 +2675,13 @@ body{
         height: 1920px;
         background-image: url('../image.png');
         background-repeat: no-repeat;
-        background-position: 90% 650px;
+        background-position: 90% 450px;
         background-size: 90vw;
     }
     
     .content-text{
         position: absolute;
-        margin-top: 1000px;
+        margin-top: 800px;
         font-size: 25px;
         font-weight: 500;
         z-index: 999;
@@ -2699,10 +2699,10 @@ body{
     
     .footer{
         width: 100%;
-        height: 100vh;
+        height: 300px;
         position: absolute;
         bottom: 0;
-        transform: translateY(-1650px);
+        transform: translateY(-450px);
         background: url('../mail_footer.png') no-repeat 50% center;
         background-size: 50%;
     }
