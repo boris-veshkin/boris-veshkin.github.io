@@ -2033,13 +2033,20 @@ body{
     }
     
     .share-block{
-        display: none;
-        float: right;
+        display: block;
+        position: absolute;
+        width: 240px;
+        float: auto;
         font-size: 25px;
         line-height: 40px;
-        color: #B9AFFF;
-        margin-top: -170px;
-        margin-right: 18%;
+        color: #fff;
+        margin-top: 0px;
+        margin-right: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transform: translateY(570px);
+        z-index: 999;
     }
     
     .share-icon{
@@ -2047,7 +2054,7 @@ body{
         margin: 0px 10px 0px 10px;
     }
     .share-icon:last-child{
-        margin-left: 30px;
+        margin-left: 20px;
     }
     
     .intro-text{
@@ -2078,7 +2085,7 @@ body{
     .intro-form{
         float: left;
         width: 80%;
-        margin-top: 600px;
+        margin-top: 650px;
         margin-left: 10%;
     }
     
@@ -2289,13 +2296,20 @@ body{
     }
     
     .share-block{
-        display: none;
-        float: right;
+        display: block;
+        position: absolute;
+        width: 240px;
+        float: auto;
         font-size: 25px;
         line-height: 40px;
-        color: #B9AFFF;
-        margin-top: -170px;
-        margin-right: 18%;
+        color: #fff;
+        margin-top: 0px;
+        margin-right: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transform: translateY(570px);
+        z-index: 999;
     }
     
     .share-icon{
@@ -2303,7 +2317,7 @@ body{
         margin: 0px 10px 0px 10px;
     }
     .share-icon:last-child{
-        margin-left: 30px;
+        margin-left: 20px;
     }
     
     .intro-text{
@@ -2334,7 +2348,7 @@ body{
     .intro-form{
         float: left;
         width: 80%;
-        margin-top: 600px;
+        margin-top: 620px;
         margin-left: 10%;
     }
     
