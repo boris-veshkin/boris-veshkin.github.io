@@ -2424,7 +2424,7 @@ body{
     .content{
         position: relative;
         width: 100%;
-        height: 800px;
+        height: 1000px;
         background-image: url('../grey_bg.png');
         background-size: cover;
         background-repeat: no-repeat;
