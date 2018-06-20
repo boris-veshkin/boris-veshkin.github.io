@@ -15,7 +15,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    background-color: #BBDEFB;
+    background-color: rgba(19, 50, 117, 0.781);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,6 +41,9 @@
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    -webkit-box-shadow: 0px 0px 40px 3px rgba(0,0,0,0.35);
+-moz-box-shadow: 0px 0px 40px 3px rgba(0,0,0,0.35);
+box-shadow: 0px 0px 40px 3px rgba(0,0,0,0.35);
   }
   .front {
     background-color: transparent;
@@ -49,6 +52,7 @@
   .back {
     background-image: url('static/sample2-back.png');
     transform: rotateY(180deg);
+    
   }
   .card:hover .front {transform: rotateY(180deg);}
   .card:hover .back {transform: rotateY(360deg);}
