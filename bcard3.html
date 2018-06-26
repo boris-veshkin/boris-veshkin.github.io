@@ -49,17 +49,23 @@
   }
   .back {
     background-image: url('static/sample3-front.png');
+    transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-  }
-  .card:hover .front {  -webkit-transform: rotateY(180deg);
-                        -moz-transform: rotateY(180deg);
-                        transform: rotateY(180deg);}
 
-  .card:hover .back {   -webkit-transform: rotateY(360deg);
+  }
+  .card:hover .front {  
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+                      }
+                        
+
+  .card:hover .back {   
+    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
                         -moz-transform: rotateY(360deg);
-                        transform: rotateY(360deg);
+                        
                       }
   
   @media only screen and (min-width: 1366px){
