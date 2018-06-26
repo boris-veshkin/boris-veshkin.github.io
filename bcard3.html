@@ -44,27 +44,28 @@
 
   }
   .front {
+    display: inline-block;
     background-color: transparent;
     background-image: url('static/sample3-back.png');
   }
   .back {
+    display: inline-block;
     background-image: url('static/sample3-front.png');
     transform: rotateY(179.9deg);
     -webkit-transform: rotateY(179.9deg);
     -moz-transform: rotateY(179.9deg);
-
   }
+
   .card:hover .front {  
-    transform: rotateY(179.9deg);
-    -webkit-transform: rotateY(179.9deg);
-    -moz-transform: rotateY(179.9deg);
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
                       }
                         
   .card:hover .back {   
-    transform: rotateY(359.9deg);
-    -webkit-transform: rotateY(359.9deg);
-                        -moz-transform: rotateY(359.9deg);
-                        
+    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
                       }
   
   @media only screen and (min-width: 1366px){
