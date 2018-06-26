@@ -46,22 +46,14 @@
     background-color: transparent;
     background-image: url('static/back.png');
   }
+  
   .back {
     background-image: url('static/front.png');
-    -webkit-transform: -webkit-rotateY(179.9deg);
-    -moz-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
-  .card:hover .front { -webkit-transform: -webkit-rotateY(179.9deg);
-                        -moz-transform: rotateY(180deg);
-                        transform: rotateY(180deg);}
-
-  .card:hover .back { -webkit-transform: -webkit-rotateY(359.9deg);
-                        -moz-transform: rotateY(360deg);
-                        transform: rotateY(360deg);
-                      }
-
-                      
+  .card:hover .front {transform: rotateY(180deg);}
+  .card:hover .back {transform: rotateY(360deg);}
+  
   @media only screen and (min-width: 1366px){
     .card {
     width: 900px;
