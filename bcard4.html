@@ -69,20 +69,6 @@
     }
 
 
-    .front-flip { 
-      transition: 1.5s;
-    -webkit-transform: rotateY(179.9deg);
-    -moz-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-    }
-
-    .back-flip {  
-      transition: 1.5s;
-    -webkit-transform: rotateY(359.9deg);
-    -moz-transform: rotateY(360deg);
-    transform: rotateY(360deg);
-    }
-  
   @media only screen and (min-width: 1366px){
     .card {
     width: 900px;
@@ -98,21 +84,12 @@
 
 
 <div class="wrap">
-    <div class="card">
+    <div class="card" onClick="return true">
       <div class="front"><span></span></div>
       <div class="back"><span></span></div>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script >
-    $(function() {
-      if (screen.width <= '1024') {
-          $(".card").click(function() {
-            $(this).find(".front").toggleClass("front-flip");
-            $(this).find(".back").toggleClass(".back-flip");
-        }); 
-        }
-      })
-  </script>
+
 </body>
 </html>
