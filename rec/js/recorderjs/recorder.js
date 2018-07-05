@@ -101,7 +101,7 @@ DEALINGS IN THE SOFTWARE.
       var blob = e.data;
       currCallback(blob);
     }
-
+    alert(blob);
     source.connect(this.node);
     this.node.connect(this.context.destination);   // if the script node is not connected to an output the "onaudioprocess" event is not triggered in chrome.
   };
@@ -109,7 +109,7 @@ DEALINGS IN THE SOFTWARE.
   Recorder.setupDownload = function(blob, filename){
     var url = (window.URL || window.webkitURL).createObjectURL(blob);
     var link = document.getElementById("save");
-    alert(url);
+
     link.href = url;
     link.download = filename || 'output.wav';
   }
