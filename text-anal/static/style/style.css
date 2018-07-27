@@ -559,13 +559,29 @@ dark-blue - Coordinating Conjunction
 
 .filter-circle{
 	position: absolute;
-	bottom: -64px;
-	right: -64px;
+	top: 80px;
+	left: -128px;
 	background-color:#6357bc;
-	width: 128px;
-	height: 128px;
+	width: 256px;
+	height: 256px;
 	border-radius: 100%;
-	opacity: 0.5;
+	opacity: 0;
+	z-index: -1;
+	animation: filter-circle 0.75s ease-in-out 0s forwards;
+}
+
+@keyframes filter-circle{
+	0%{
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	50%{
+		opacity: 0.5;
+	
+	}100%{
+		opacity: 0.5;
+		transform: translateX(0px);
+	}
 }
 
 .filter-toggler{
@@ -600,6 +616,23 @@ dark-blue - Coordinating Conjunction
 	-moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.15);
 	box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.15);
 	margin: 20px 20px 0px 20px;
+	opacity: 0;
+	animation: filter-blocks 0.75s ease-in-out 1s forwards;
+}
+
+
+@keyframes filter-blocks{
+	0%{
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	50%{
+		opacity: 1;
+	
+	}100%{
+		opacity: 1;
+		transform: translateY(0px);
+	}
 }
 
 
@@ -793,7 +826,7 @@ overflow: hidden;
 	height: 64px;
 	border-radius: 100%;
 	opacity: 0;
-	animation: bubble-show 1s ease-in-out 1.75s forwards;
+	animation: bubble-show 1s ease-in-out 1.6s forwards;
 	transform: translateY(0px),translateX(0);
 
 }
