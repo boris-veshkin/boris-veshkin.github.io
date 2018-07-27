@@ -98,18 +98,18 @@
                     <div class="chat-card-name">
                         Betty
                     </div>
-                    and how are you?and how are you?and how are you?and how are you?
-                    and how are you?and how are you?and how are you?and how are you?and how are you?
-                    and how are you?and how are you?and how are you?and how are you?and how are you?
+                    and how are you?and how are you?and how are you?and how are you? and how are you?and how are you?and how are you?and how
+                    are you?and how are you? and how are you?and how are you?and how are you?and how are you?and how are
+                    you?
                     <div class="chat-bubble pink-b"></div>
                 </div>
                 <div class="chat-card chat-male">
-                        <div class="chat-card-name">
-                            Nick
-                        </div>
-                        perfect
-                        <div class="chat-bubble green-b"></div>
+                    <div class="chat-card-name">
+                        Nick
                     </div>
+                    perfect
+                    <div class="chat-bubble green-b"></div>
+                </div>
             </div>
         </div>
         <div class="column">
@@ -141,7 +141,7 @@
             </div>
             <div class="filters-container filters-show" id="filter_container">
                 <div class="filter-circle">
-                    
+
                 </div>
                 <h2>Filters</h2>
                 <div class="filter-block">
@@ -270,8 +270,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-    <script src="static/style/jquery.mCustomScrollbar.concat.min.js"></script>
-
     <script>
         Chart.defaults.global.legend.display = false;
         new Chart(document.getElementById("myChart"),
@@ -283,13 +281,21 @@
                         "label": "My First Dataset", "data": [300, 2050, 1000],
                         "backgroundColor": ["rgb(109, 209, 92)", "rgb(97, 152, 234)", "rgb(255, 181, 96)"]
                     }]
+                },
+                "options": {
+
+                    "animation": {
+                        "duration": 2200,
+
+                        "animateRotate": true
+                    }
                 }
             });
     </script>
 
     <script>
         Chart.defaults.global.legend.display = false;
-        Chart.defaults.global.animation.duration = 2000;
+
         new Chart(document.getElementById("myChart2"),
             {
                 "type": "doughnut",
@@ -299,8 +305,16 @@
                         "label": "My First Dataset", "data": [300, 50],
                         "backgroundColor": ["rgb(109, 209, 92)", "rgb(97, 152, 234)"]
                     }]
-                    
+
                 },
+                "options": {
+
+"animation": {
+    "duration": 2000,
+
+    "animateRotate": true
+}
+}
             });
     </script>
     <script>
@@ -315,9 +329,18 @@
                         "label": "My First Dataset", "data": [300, 50, 100],
                         "backgroundColor": ["rgb(109, 209, 92)", "rgb(97, 152, 234)", "rgb(255, 181, 96)"]
                     }]
-                }
+                },
+                "options": {
+
+"animation": {
+    "duration": 2000,
+
+    "animateRotate": true
+}
+}
             });
     </script>
+
     <script>
         $('#top_10_words').change(function () {
             if (this.checked) {
