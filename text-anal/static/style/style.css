@@ -3,7 +3,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Montserrat', sans-serif !important;
-    background-color: #f1f1f1;
+
 
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,7 +21,8 @@ body {
 }
 
 .column{
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 
@@ -549,12 +550,22 @@ dark-blue - Coordinating Conjunction
 
 
 .filters-container {
-
+	position: relative;
 	width: 100%;
-	height: 55%;
-	margin-top: 50px;
+	height: 100%;
     bottom: 0;
 	transform: translateX(150%);
+}
+
+.filter-circle{
+	position: absolute;
+	bottom: -64px;
+	right: -64px;
+	background-color:#6357bc;
+	width: 128px;
+	height: 128px;
+	border-radius: 100%;
+	opacity: 0.5;
 }
 
 .filter-toggler{
@@ -579,11 +590,9 @@ dark-blue - Coordinating Conjunction
 	text-align: center;
 	color: #5a5a5a;
 	background: rgba(255, 255, 255, 1);
-	margin: 0px 20px 0px 20px;
-	-webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.15);
-	-moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.15);
-	box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.15);
+	margin: 0px;
 	padding: 10px 0px 10px 0px;
+	border-bottom: 1px solid #eaeaea;
 }
 
 .filter-block {
@@ -593,6 +602,8 @@ dark-blue - Coordinating Conjunction
 	margin: 20px 20px 0px 20px;
 }
 
+
+
 .filter-row {
 	display: grid;
 	background: rgba(255, 255, 255, 1);
@@ -601,9 +612,16 @@ dark-blue - Coordinating Conjunction
 	text-align: left;
 }
 
+
+
 .filter-column {
 	padding: 10px;
 	border-bottom: 1px solid #bdbdbd;
+}
+
+.filter-column:last-child {
+
+	border-bottom: 0px solid #bdbdbd;
 }
 
 .filter-label{

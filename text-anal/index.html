@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="static/style/style.css">
 
+
     <style>
         [type="checkbox"]:checked+span:not(.lever):before {
             border-right: 2px solid #6357bc !important;
@@ -139,10 +140,8 @@
                 <p>Error message test</p>
             </div>
             <div class="filters-container filters-show" id="filter_container">
-                <div class="filter-toggler" id="filter-toggler">
-                    <i class="fas fa-sliders-h"></i>
-                    </i>
-                    Filters
+                <div class="filter-circle">
+                    
                 </div>
                 <h2>Filters</h2>
                 <div class="filter-block">
@@ -155,24 +154,13 @@
 
                         </div>
 
-                        <div class="filter-column">
-                            <label>
-                                <input id="keywords" type="checkbox" />
-                                <span>Keywords Extraction</span>
-                            </label>
-                        </div>
 
-                        <div class="filter-column">
-                            <label>
-                                <input id="keyphrases" type="checkbox" />
-                                <span>Keyphrase Extraction</span>
-                            </label>
-                        </div>
+
 
                         <div class="filter-column">
                             <label>
                                 <input id="summary" type="checkbox" />
-                                <span>Text Summarization</span>
+                                <span>Gender Detection</span>
                             </label>
                         </div>
 
@@ -201,7 +189,7 @@
                                 <p> - Neutral</p>
                             </label>
                         </div>
-                        <div class="filter-column">
+                        <div class="filter-column" style="border: 0;">
                             <label>
                                 <input id="morphology" type="checkbox" />
                                 <span>Morphology Analytics</span>
@@ -282,7 +270,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-
+    <script src="static/style/jquery.mCustomScrollbar.concat.min.js"></script>
 
     <script>
         Chart.defaults.global.legend.display = false;
