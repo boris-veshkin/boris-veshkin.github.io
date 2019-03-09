@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="upload-form">
+        <div id="app">
+            <h1>
+                Simplif<span>ai</span> Labs
+            </h1>
+            <p>Visual Recognition Demo</p>
+          <main>
+            <div class="image-container">
+              <img :src="url" v-if="url && !image1">
+                <img src="5.jpg" v-if="!url && image1">
+                <img src="11outfit.jpg" v-if="!url && image2">
+                <img src="0529.jpg" v-if="!url && image3">
+                <div class="preview" v-if="!url && !image1 && !image2 && !image3">
+                    <i class="fas fa-camera"></i>
+                    <p>Upload image to preview</p>
+                </div>
+            </div>
+            <div class="actions-container">
+              <div class="action" 
+                @click="
+                image1 = true;
+                image2 = false;
+                image3 = false;
+                result = false;
+                url='';
+                ">
+                <i class="fas fa-tshirt"></i>
+                <p>Sample Photo</p>
+              </div>
+              <div class="action"
+              @click="
+                image1 = false;
+                image2 = true;
+                image3 = false;
+                result = false;
+                url='';
+                ">
+                <i class="fas fa-tshirt"></i>
+                <p>Sample Photo</p>
+              </div>
+              <div class="action"
+              @click="
+                image1 = false;
+                image2 = false;
+                image3 = true;
+                result = false;
+                url='';
+                ">
+                <i class="fas fa-tshirt"></i>
+                <p>Sample Photo</p>
+              </div>
+              <input type="file" id="file" accept="image/*" ref="file" v-on:change="handleFileUpload(), onFileChange(), submitFile()" style="display:none;" />
+              <label for="file">
+                <div class="action" style="  background-image: none;">
+                  <i class="fas fa-camera"></i>
+                  <p>Click to upload</p>
+                </div>
+              </label>
+            </div>
+            <div class="results-container">
+              <h3>Model results</h3>
+              
+              <ul >
+                <transition-group name="fade">
+                  <li v-for="item in apparel" :key="item" v-if="result">
+                    {{item}}
+                  </li>
+                </transition-group>
+                <transition-group name="fade">
+                  <li v-for="item in colors" :key="item" v-if="result" style="line-height: 40px;">
+                    {{item}}
+                    <div class="circle" v-bind:style="{ backgroundColor : 'rgb(' + item + ')' }">
+                            
+                    </div>
+                  </li>
+                </transition-group>
+
+                <transition-group name="fade">
+                    <li v-for="item in apparels1" :key="item" v-if="image1 && !result">
+                        {{item}}
+
+
+                    </li>
+                </transition-group>
+                <transition-group name="fade">
+                    <li v-for="item in colors1" :key="item" v-if="image1 && !result">
+                        {{item}}
+
+                        <div class="circle" v-bind:style="{ backgroundColor : 'rgb(' + item + ')' }">
+                            
+                        </div>
+                    </li>
+                </transition-group>
+
+
+
+
+                <transition-group name="fade">
+                    <li v-for="item in apparels2" :key="item" v-if="image2 && !result">
+                        {{item}}
+                    </li>
+                </transition-group>
+
+                <transition-group name="fade">
+                    <li v-for="item in colors2" :key="item" v-if="image2 && !result">
+                        {{item}}
+                        <div class="circle" v-bind:style="{ backgroundColor : 'rgb(' + item + ')' }">
+                            
+                        </div>
+                    </li>
+                </transition-group>
+
+
+
+                <transition-group name="fade">
+                    <li v-for="item in apparels3" :key="item" v-if="image3 && !result">
+                        {{item}}
+                    </li>
+                </transition-group>
+
+                <transition-group name="fade">
+                    <li v-for="item in colors3" :key="item" v-if="image3 && !result">
+                        {{item}}
+
+                        <div class="circle" v-bind:style="{ backgroundColor : 'rgb(' + item + ')' }">
+                            
+                        </div>
+                    </li>
+                </transition-group>
+              </ul>
+
+            </div>
+          </main>
+
+
+
+
+        </div>
+    </div>
+
+
+
+    <script src='https://unpkg.com/vue/dist/vue.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1 "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+    <script>
+        new Vue({
+            el: '#upload-form',
+            data() {
+                return {
+                    file: '',
+                    url: null,
+                    errors: [],
+                    image1:false,
+                    image2:false,
+                    image3:false,
+
+                            apparels1:["trousers", "scarf", "coat", "tops", "handbag"],
+                            colors1:[
+                                "54, 41, 37" , 
+                                "164, 153, 126", 
+                                "228,223,214"
+                                ]
+
+                    ,
+                            apparels2:["boots", "cardigans", "tops", "handbag"],
+                            colors2:["39, 40, 38" , "216, 209, 185", "142, 148, 146"]
+                    ,
+
+                            apparels3:["boots", "trousers", "blazers", "waistcoat"],
+                            colors3:["39, 49, 48" , "206, 199, 202", "122, 116, 111"]
+                    ,
+                    result: null,
+                    apparel:null,
+                    colors:null,
+                    loading: null,
+                    orderedData: [],
+                    preloading: false
+                }
+            },
+            computed: {
+/*                 stransformToStyle: function(){
+                    for (color in this.colors){
+                        console.log(color)
+                    }
+                } */
+            },
+            methods: {
+
+                /*
+                  Submits the file to the server
+                */
+                onFileChange(e) {
+                    this.url = URL.createObjectURL(this.file);
+
+                    console.log(this.url)
+                },
+                submitFile() {
+                    /*
+                            Initialize the form data
+                        */
+                        console.log(this.file)
+                    if (this.file) {
+                        let formData = new FormData();
+
+                        /*
+                            Add the form data we need to submit
+                        */
+
+                        formData.append('file', this.file);
+
+                        /*
+                        Make the request to the POST /single-file URL
+                        */
+
+                        axios.post('https://7c55528a.ngrok.io/api/v1/classify-img',
+                            formData,
+                            {
+                                headers: {
+                                    'Content-Type': 'multipart/form-data'
+                                }
+                            }
+                        ).then(response => {
+
+                            console.log(response.data);
+                            this.result = true;
+                            this.apparel = response.data.apparel;
+                            this.colors = response.data.colors;
+                            console.log(this.result)
+                        }).catch(e => {
+                            this.errors.push(e)
+
+                        });
+                    } else {
+                        console.log("Choose the part")
+                    }
+                },
+
+                /*
+                  Handles a change on the file upload
+                */
+                handleFileUpload() {
+                    this.file = this.$refs.file.files[0];
+                }
+            }
+
+
+        })
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
