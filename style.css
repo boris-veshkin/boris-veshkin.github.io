@@ -144,7 +144,9 @@ main{
 }
 
 .actions-container .action:last-child{
+  height: 131px;
   background-color:rgba(0, 112, 255,1);
+  border: 0px solid #3D1E65;
 /*   background: #1e3c72;  
   background: -webkit-linear-gradient(to bottom, #2F164F, #29173F);  
   background: linear-gradient(to bottom, #2F164F, #29173F);  */
