@@ -18,9 +18,9 @@
             <p>Visual Recognition Demo</p>
           <main>
             <div class="image-container">
-              <img :src="url" v-if="url && !image1">
-                <img src="5.jpg" v-if="!url && image1">
-                <img src="11outfit.jpg" v-if="!url && image2">
+              <img :src="url" v-if="url && !image1 && !image2 && !image3">
+                <img src="image2.jpeg" v-if="!url && image1">
+                <img src="image.jpg" v-if="!url && image2">
                 <img src="0529.jpg" v-if="!url && image3">
                 <div class="preview" v-if="!url && !image1 && !image2 && !image3">
                     <i class="fas fa-camera"></i>
@@ -36,8 +36,9 @@
                 result = false;
                 url='';
                 ">
-                <i class="fas fa-tshirt"></i>
-                <p>Sample Photo</p>
+                <div class="overlay">
+
+                </div>
               </div>
               <div class="action"
               @click="
@@ -47,8 +48,9 @@
                 result = false;
                 url='';
                 ">
-                <i class="fas fa-tshirt"></i>
-                <p>Sample Photo</p>
+                <div class="overlay">
+
+                </div>
               </div>
               <div class="action"
               @click="
@@ -58,8 +60,9 @@
                 result = false;
                 url='';
                 ">
-                <i class="fas fa-tshirt"></i>
-                <p>Sample Photo</p>
+                <div class="overlay">
+
+                </div>
               </div>
               <input type="file" id="file" accept="image/*" ref="file" v-on:change="handleFileUpload(), onFileChange(), submitFile()" style="display:none;" />
               <label for="file">
@@ -75,7 +78,10 @@
               <ul >
                 <transition-group name="fade">
                   <li v-for="item in apparel" :key="item" v-if="result">
-                    {{item}}
+                    {{item[0]}}
+                    <p>
+                        {{parseFloat(item[1]).toFixed(2)}}
+                    </p>
                   </li>
                 </transition-group>
                 <transition-group name="fade">
@@ -89,7 +95,8 @@
 
                 <transition-group name="fade">
                     <li v-for="item in apparels1" :key="item" v-if="image1 && !result">
-                        {{item}}
+                        {{item[0]}}
+                        <p>{{item[1]}}</p>
 
 
                     </li>
@@ -105,11 +112,10 @@
                 </transition-group>
 
 
-
-
                 <transition-group name="fade">
                     <li v-for="item in apparels2" :key="item" v-if="image2 && !result">
-                        {{item}}
+                        {{item[0]}}
+                        <p>{{item[1]}}</p>
                     </li>
                 </transition-group>
 
@@ -126,7 +132,8 @@
 
                 <transition-group name="fade">
                     <li v-for="item in apparels3" :key="item" v-if="image3 && !result">
-                        {{item}}
+                        {{item[0]}}
+                        <p>{{item[1]}}</p>
                     </li>
                 </transition-group>
 
@@ -168,21 +175,26 @@
                     image2:false,
                     image3:false,
 
-                            apparels1:["trousers", "scarf", "coat", "tops", "handbag"],
-                            colors1:[
-                                "54, 41, 37" , 
-                                "164, 153, 126", 
-                                "228,223,214"
-                                ]
+                            apparels1:[
+                                ["sneakers", 1.00],
+                                ["trousers", 0.71], 
+                                ["tops", 0.91]
+                            ],
+                            colors1:["47,48,46" , "113, 108, 100", "177, 180, 181"],
 
-                    ,
-                            apparels2:["boots", "cardigans", "tops", "handbag"],
-                            colors2:["39, 40, 38" , "216, 209, 185", "142, 148, 146"]
-                    ,
+                            apparels2:[
+                                ["boots", 0.87],
+                                ["cardigans", 0.77], 
+                                ["tops", 0.96]
+                            ],
+                            colors2:["141,131,92" , "44, 45, 48", "224, 207, 184"],
 
-                            apparels3:["boots", "trousers", "blazers", "waistcoat"],
-                            colors3:["39, 49, 48" , "206, 199, 202", "122, 116, 111"]
-                    ,
+                            apparels3:[
+                                ["trousers", 0.98], 
+                                ["blazers", 0.96],
+                                ["waistcoat", 0.98]
+                            ],
+                            colors3:["141,131,92" , "44, 45, 48", "224, 207, 184"],
                     result: null,
                     apparel:null,
                     colors:null,
