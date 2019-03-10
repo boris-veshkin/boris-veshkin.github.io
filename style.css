@@ -198,6 +198,7 @@ main{
   list-style: none;
   padding: 15px 10px;
   border-top: 1px solid rgb(196, 196, 196);
+  line-height: 42px;
 }
 
 .results-container ul li:last-child{
