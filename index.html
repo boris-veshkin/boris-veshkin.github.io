@@ -12,17 +12,18 @@
 <body>
     <div id="upload-form">
         <div id="app">
-            <transition name="loading">
-                <div class="loading" v-if="loading">
-                    
-                </div>
-            </transition>
+
             <h1>
                 Simplif<span>ai</span> Labs
             </h1>
             <p>Visual Recognition Demo</p>
           <main>
             <div class="image-container">
+            <transition name="loading">
+                <div class="loading" v-if="loading">
+                                
+                </div>
+            </transition>
               <img :src="url" v-if="url && !image1 && !image2 && !image3">
                 <img src="image2.jpeg" v-if="!url && image1">
                 <img src="image.jpg" v-if="!url && image2">
@@ -81,12 +82,17 @@
                     style="display:none;" 
                 />
 
-              <label for="file">
+              <label for="file" v-if="!loading">
                 <div class="action" style="  background-image: none;">
                   <i class="fas fa-camera"></i>
                   <p>Click to upload</p>
                 </div>
               </label>
+              <label for="">
+                <div class="action disabled" v-if="loading">
+                    Loading results
+                </div>
+            </label>
             </div>
             <div class="results-container">
               <h3>Model results</h3>
