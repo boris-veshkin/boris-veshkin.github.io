@@ -12,6 +12,11 @@
 <body>
     <div id="upload-form">
         <div id="app">
+            <transition name="loading">
+                <div class="loading" v-if="loading">
+                    
+                </div>
+            </transition>
             <h1>
                 Simplif<span>ai</span> Labs
             </h1>
@@ -71,7 +76,8 @@
                     submitFile(),
                     image1 = false;
                     image2 = false;
-                    image3 = false;"
+                    image3 = false;
+                    loading = true"
                     style="display:none;" 
                 />
 
@@ -94,7 +100,7 @@
                     </p>
                   </li>
                 </transition-group>
-                <transition-group name="fade">
+                <transition-group name="loading">
                   <li v-for="item in colors" :key="item" v-if="result" style="line-height: 40px;">
                     {{item}}
                     <div class="circle" v-bind:style="{ backgroundColor : 'rgb(' + item + ')' }">
@@ -107,16 +113,12 @@
                     <li v-for="item in apparels1" :key="item" v-if="image1 && !result">
                         {{item[0]}}
                         <p>{{item[1]}}</p>
-
-
                     </li>
                 </transition-group>
                 <transition-group name="fade">
                     <li v-for="item in colors1" :key="item" v-if="image1 && !result">
                         {{item}}
-
                         <div class="circle" v-bind:style="{ backgroundColor : 'rgb(' + item + ')' }">
-                            
                         </div>
                     </li>
                 </transition-group>
@@ -209,7 +211,7 @@
                     colors:null,
                     loading: null,
                     orderedData: [],
-                    preloading: false
+                    loading: false
                 }
             },
             computed: {
@@ -260,6 +262,7 @@
                             this.result = true;
                             this.apparels = response.data.apparels;
                             this.colors = response.data.colors;
+                            this.loading = false;
                             console.log(this.result)
                         }).catch(e => {
                             this.errors.push(e)
